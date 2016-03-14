@@ -1,0 +1,6 @@
+Systeme de grille : 
+Utilisé par les graphismes généralement. Permet de disposé facilement les éléments
+
+srcset : permet de garder une binne qualité d'image en réduisan une image plus grande
+
+

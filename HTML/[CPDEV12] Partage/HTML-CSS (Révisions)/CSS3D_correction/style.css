@@ -1,0 +1,144 @@
+body
+{
+	background-image: url('img/squares.png');
+}
+
+.centered
+{
+	/** On positionne le bloc au centre **/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 270px;
+	height: 270px;
+	margin-left: -135px;
+	margin-top: -135px;
+}
+
+.stage {
+	/* Application d'une perspective pour pouvoir avoir un rendu 3D */
+	-webkit-perspective: 700px;
+	    -ms-perspective: 700px;
+	        perspective: 700px;
+}
+
+.cube {
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	
+	/* Forcer le navigateur à conserver le mode de rendu 3d (ce qui n'est pas le cas par défaut) */
+	-webkit-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+	        transform-style: preserve-3d; 
+	
+	/* Application d'une animation sur l'élément .cube (qui contient nos faces) */
+	-webkit-animation: tournerCube 5s linear infinite;
+	        animation: tournerCube 5s linear infinite;
+}
+	/** Toutes les faces du cube ont la classe .cubeface
+			(plus pratique que d'écrire #face1, #face2, ...)
+			**/
+	.cubeface {
+		position: absolute;
+		
+		/**	Application d'une transition pour
+			avoir un effet d'interpolation entre
+			l'état normal et l'état :hover pour
+			chaque face
+			**/
+		-webkit-transition: -webkit-transform 1s;
+		        transition: transform 1s;
+	}
+
+/** On déplace chaque face dans l'espace indépendamment,
+			pour construire notre cube
+			**/
+#face1 {
+	-webkit-transform: translateZ(135px);
+	    -ms-transform: translateZ(135px);
+	        transform: translateZ(135px);
+}
+#face2 {
+	-webkit-transform: translateZ(-135px);
+	    -ms-transform: translateZ(-135px);
+	        transform: translateZ(-135px);
+}
+#face3 {
+	-webkit-transform: translateY(-135px) rotateX(90deg);
+	    -ms-transform: translateY(-135px) rotateX(90deg);
+	        transform: translateY(-135px) rotateX(90deg);
+}
+#face4 {
+	-webkit-transform: translateY(135px) rotateX(90deg);
+	    -ms-transform: translateY(135px) rotateX(90deg);
+	        transform: translateY(135px) rotateX(90deg);
+}
+#face5 {
+	-webkit-transform: translateX(-135px) rotateY(90deg);
+	    -ms-transform: translateX(-135px) rotateY(90deg);
+	        transform: translateX(-135px) rotateY(90deg);
+}
+#face6 {
+	-webkit-transform: translateX(135px) rotateY(90deg);
+	    -ms-transform: translateX(135px) rotateY(90deg);
+	        transform: translateX(135px) rotateY(90deg);
+}
+
+/**	Si le .cube est en :hover, on change la translation de chaque face
+			pour qu'elles aillent un peu plus loin, et ainsi donner un
+			effet d'explosion du cube
+			**/
+
+.cube:hover #face1 {
+	-webkit-transform: translateZ(235px);
+	    -ms-transform: translateZ(235px);
+	        transform: translateZ(235px);
+}
+.cube:hover #face2 {
+	-webkit-transform: translateZ(-235px);
+	    -ms-transform: translateZ(-235px);
+	        transform: translateZ(-235px);
+}
+.cube:hover #face3 {
+	-webkit-transform: translateY(-235px) rotateX(90deg);
+	    -ms-transform: translateY(-235px) rotateX(90deg);
+	        transform: translateY(-235px) rotateX(90deg);
+}
+.cube:hover #face4 {
+	-webkit-transform: translateY(235px) rotateX(90deg);
+	    -ms-transform: translateY(235px) rotateX(90deg);
+	        transform: translateY(235px) rotateX(90deg);
+}
+.cube:hover #face5 {
+	-webkit-transform: translateX(-235px) rotateY(90deg);
+	    -ms-transform: translateX(-235px) rotateY(90deg);
+	        transform: translateX(-235px) rotateY(90deg);
+}
+.cube:hover #face6 {
+	-webkit-transform: translateX(235px) rotateY(90deg);
+	    -ms-transform: translateX(235px) rotateY(90deg);
+	        transform: translateX(235px) rotateY(90deg);
+}
+
+/** Définition du comportement de l'animation qui fera tourner le cube **/
+
+@keyframes tournerCube {
+	0% {
+		-ms-transform: rotateY(0deg);
+		    transform: rotateY(0deg);
+	}
+	100% {
+		-ms-transform: rotateY(360deg);
+		    transform: rotateY(360deg);
+	}
+}
+
+@-webkit-keyframes tournerCube {
+	0% {
+		-webkit-transform: rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: rotateY(360deg);
+	}
+}
