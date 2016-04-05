@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Groupage de tableaux</title>
+</head>
+<body>
+
+<h1>Groupage de tableaux</h1>
+
+<p><i>Ouvrez ce fichier dans votre éditeur de code et faites ce qui est demandé...</i></p>
+
+<script>
+  String.prototype.capitalize = function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+  }
+  // Un tableau de noms mal formatés
+  var noms = [ "PerEZ", "pignon", " simon", "Denis ", "de Oliveira" ];
+  // Un tableau de prénoms mal formatés
+  var prenoms = [ " daniel", "André", "aurélien ", "michaël", " Vincent " ];
+  var nomPrenom = [];
+
+  // ---
+  // Vous noterez les espaces en trop, et le fait que les noms ne sont pas en majuscules, ni la première lettre des prénoms
+  // ---
+
+  // Trouvez un moyen d'obtenir un nouveau tableau qui contiendra les Prénoms et NOMS de ces 2 tableaux
+  // Dans cet exemple, le tableau final devrait ressembler à ça :
+  // ["Daniel PEREZ", "André PIGNON", "Aurélien SIMON", "Michaël DENIS", "Vincent DE OLIVEIRA"]
+
+  // ==================
+  // Votre code ici ...
+  function associateNomPrenom(nom, prenom){
+    var result = (prenom.trim().capitalize() + " " + String.toUpperCase(nom.trim()));
+    return result;
+  }
+
+  for (var i = 0; i < noms.length; i++) {
+      nomPrenom.push(associateNomPrenom(noms[i], prenoms[i]));
+    } 
+    console.log(nomPrenom.join(", "));
+    // <===============
+</script>
+
+</body>
+</html>

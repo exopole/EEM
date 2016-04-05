@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des participants</title>
+</head>
+<body>
+
+  <h1>Liste des participants</h1>
+
+  <p><i>Ouvrez ce fichier dans votre éditeur de code et faites ce qui est demandé...</i></p>
+
+  <script>
+
+    // La liste des participants
+
+    /**
+    * Le tableau 'mails' contient une liste d'emails, qui contiennent des adresses avec un + ou - devant.
+    * Un + signifie que la personne sera présente, et un - signifie que finalement, la personne ne pourra pas venir
+    * 
+    * Objectif : Sortez un tableau qui contiendra la liste des participants finaux de l'événement
+    **/
+
+    var mails = ['Veuillez trouvez ci-joint les premiers participants: +alex.d@gmail.com et +bernard.s@hotmail.fr ',
+                 'Ah! J\'oubliais: +lucie.p@free.fr +marc.q@gmail.com',
+                 'Quelques modifs de dernière minute: +albert.t@hotmail.fr -alex.d@gmail.com',
+                 'Finalement fabrice veut participer: +fabrice.s@hotmail.com',
+                 'Du nouveau aujourd\'hui ;) +gerard.v@acm.com +lise.x@hotmail.com -albert.t@hotmail.fr',
+                 'Moi aussi je veux participer: +geraldine@free.fr',
+                 'Ci-joint les nouveaux participants: +edgard.d@gmail.it +benoit.l@hotmail.be',
+                 'Elle ne pourra pas venir: -lise.x@hotmail.com',
+                 'Les derniers inscrits: +valerie.w@fergi.com +aurelie.b@hotmail.com'];
+    var mailArray = [];
+    var arrayTmp = [];
+    var message = "";
+    var x =0;
+    var y = 0;
+    for (var i = 0; i < mails.length; i++) {
+      arrayTmp = mails[i].split(" ");
+      for (var j = 0; j < arrayTmp.length; j++) {
+        var tmp = arrayTmp[j];
+        //console.log(tmp);
+         if (tmp.contains("@")){
+            if (tmp.charAt(0) === '+') 
+              mailArray.push(tmp.substring(1, tmp.length));
+            if (tmp.charAt(0) === '-') 
+              mailArray.slice(mailArray.indexOf(tmp.substring(1, tmp.length), 1));
+        }
+        //   if(tmp.chartAt(0) === '+')
+        //     x++;
+        //   else if (tmp.chartAt(0) === "-") 
+        //     y++;
+        // }
+
+      } 
+    }
+
+    // message = x +", " +y;
+    console.log("le message est " + message +  "\n mail array : \n" + mailArray.join(',\t\n'));
+
+    </script>
+    </body>
+    </html>

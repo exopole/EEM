@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tri de tableau</title>
+</head>
+<body>
+
+<h1>Tri de tableau</h1>
+
+<p><i>Ouvrez ce fichier dans votre éditeur de code et faites ce qui est demandé...</i></p>
+
+<script>
+  // Soit un tableau de notes (sur 20)
+  var notes = [12, 9, 15, 7, 8, 16, 18, 20];
+  notes.sort(function(a, b){return a-b});
+
+  var i = 0;
+  /*
+  while(notes[i] <10)
+  	i++;
+
+  notes= notes.splice(i,notes.length);
+*/
+
+  while(notes[0] <10)
+  	notes.splice(0, 1);
+
+  console.log(notes.join(","));
+
+  // Trouvez un moyen d'obtenir un nouveau tableau qui ne contiendra QUE les notes supérieures ou égales à 10
+  // Dans cet exemple, le tableau final devrait ressembler à ça : [12, 15, 16, 18, 20]
+
+  // ==================
+  // Votre code ici ...
+  // ==================
+</script>
+
+</body>
+</html>

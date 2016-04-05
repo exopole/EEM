@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+
+</head>
+	<title>Document</title>
+</head>
+<body>
+	<h1>Ajouter un plugin JQuery</h1>
+	<ol>
+		<li>faire la liaison vers la librairie jQuery: </li>
+			<br> 
+			<code>
+				<pre>	&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">&lt;/script></pre>
+			</code>
+		<li> liaison vers les fichiers du développeur
+			<ul>
+				<li>CSS</li>
+				<li>JS <br> <strong>Attention pensez bien à appeler les fichiers du dev APRES avoir défini JQuery</strong></li>
+				<li></li>
+			</ul>
+		</li>
+		<li>Adapter son HTML</li>
+		<li>Apeler le plugin
+			<p><code>flexslider({option1 : valeur1, option : valeur2});</code></p>
+		</li>
+	</ol>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		window.jQuery || document.write('<script src="js/jQuery-1.12.min.js"><\/script>')
+	</script>
+	<script type="text/javascript">
+			$(document).ready(
+				function(){
+					$("body").hide()
+							.fadeIn(3000);
+
+					$(".test").hide();
+					$(".button").on("click", function(){ 
+							$(".test").fadeToggle(3000);
+					});
+
+				}
+			)
+	</script>
+	
+	<input type="button" class="button" name="lien1" value="nom du lien" onclick="" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick> 
+
+	<summary class="test"> Miaou is here .... Or not ... Do you see it ? The law of universe inside the miaou ... 
+	</summary>
+
+
+</body>
+</html>
