@@ -1,0 +1,85 @@
+/*  Display  */
+
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+.contenant {
+	margin: 10em;
+	margin-top: 0em;
+}
+
+.Intr {
+	width: 60%;
+}
+
+.Introduction {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.section {
+	display: flex;	
+	justify-content: space-between;
+}
+
+li {
+	list-style: none;
+	display: inline-block;
+	padding-right: 15px;
+}
+
+.entete {
+	display: flex;
+	justify-content: center space-around;
+}
+
+.entete form{
+	margin: auto;
+}
+
+.entete ul {
+	margin: auto;
+}
+
+.container > ul {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.shadow {
+	background-color: rgba(0,0,0,0,0.6);
+	position:fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+
+.picture{
+	top: 50%;
+	left: 50%;
+	position: fixed;
+	transform: translate3d(-50%,-50%,0);
+ 	
+ }
+
+ a {
+ 	font-size:14px;
+	font-family: Arial;
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	text-decoration: none;
+	color: #888;
+ }
+
+ .foot {
+ 	display: flex;
+ 	justify-content: space-around;
+ }
