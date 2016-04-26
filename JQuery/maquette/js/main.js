@@ -8,6 +8,8 @@
 
 
 // });
+$.fn.gis = function()
+  {
 $(document).ready(function() {
 	$('.js-scrollTo').on('click', function(){
 		var cible = $(this).attr('href');
@@ -35,12 +37,19 @@ $(document).ready(function() {
 // 4. Un bouton "fermer"
 	
 	var lightbox = function(){
+		var src = $(this).find('img').attr('src');
+		var alt = $(this).find('img').attr('alt');
+
 		console.log("coucou");
 		$('body').append('<div id="lightbox" class="shadow">'
-								+ '<img src="Image/1bouteille.jpg" class="picture" alt="Image test"/>'
+								+ '<div class="lightbox-container">'
+								+ '<img src='+ src + ' 	class="picture" alt="Image test"/>'
+								+ '<div id= "close" class= "fa fa-times-circle fa-3x"</div>'
+								+ '</div>'
 						+'</div>'
-		);
 
+		);
+		console.log(src + " ////// " + alt)
 
 		var $picture = $('.picture');
 		var pictureWidth = $picture.width();
@@ -48,13 +57,19 @@ $(document).ready(function() {
 		var pictureHeight = $picture.height();
 		var modifiedPictureHeigth = -(pictureHeight/2);
 
-		var legend = $picture.attr('alt');
+
 
 		$picture.css({
 			'max-Height': $(window).innerHeight()
 		});
 
-		console.log(legend);
+		$picture.after("<p>" + alt + "</p>");
+		$picture.next('p').addClass('lightbox-legend');
+
+		var close = function(){
+			$("#lightbox").remove();
+		}
+		$("#close,.shadow").on('click', close)
 	}
 
 	$(".img").on('click', lightbox);
