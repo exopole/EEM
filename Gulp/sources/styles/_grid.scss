@@ -1,0 +1,35 @@
+// Notre grille perso
+
+$grid-number: 12;
+$grid-content-size: 6.25%;
+$grid-margin-left: 1.0416666666667%;
+$grid-margin-right: 1.0416666666667%;
+
+@for $i from 1 through $grid-number {
+  .grid_#{$i} {
+    width: ($grid-margin-left + $grid-margin-right) * ($i - 1) + ($grid-content-size * $i)
+  }
+}
+
+.container_#{$grid-number} {
+  width: (($grid-content-size + $grid-margin-left + $grid-margin-right) * $grid-number);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Ceci correspond au bloc de style de chaque .grid_1, .grid_2, ...
+%grid_style {
+  float: left;
+  display: inline;
+  margin-left: $grid-margin-left;
+  margin-right: $grid-margin-right;
+}
+// On boucle jusqu'à $grid-number ...
+@for $i from 1 through $grid-number {
+  .grid_#{$i} {
+    @extend %grid_style; // On 'écrit' le bloc de style %grid_style ici
+  }
+}
+// ... ce qui a pour effet de créer un sélecteur type : .grid_1, .grid_2, ... jusqu'à 12
+
+.row { overflow: hidden; }

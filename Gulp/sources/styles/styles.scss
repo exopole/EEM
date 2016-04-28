@@ -1,0 +1,45 @@
+// Variables
+$rouge: #f92107;
+$default-font-size: 1rem;
+$default-font-family: 'Open Sans', Arial, sans-serif;
+
+@import '_grid';
+
+html {
+  background-color: $rouge;
+  font-size: $default-font-size;
+  font-family: $default-font-family;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: black;
+  margin-bottom: 1rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 0.5rem 2rem;
+
+        &:link, &:visited {
+          color: $rouge;
+        }
+        &:active, &:focus, &:hover {
+          background-color: invert($rouge);
+          color: black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<fieldset>
+	<legend>Chat</legend>	
+	<aside id="userlist">
+		<h2>Sont connectés</h2>	
+		<ul>
+			<li>Alex</li>
+			<li>Annie</li>
+		</ul>
+	</aside>
+
+	<div id="tchatbox">
+		<p><b>Alex</b> Miaou</p>
+		<p><b>Annie</b> Calin catoune</p>
+		<p><b>Alex</b> Ronronron</p>
+		<p>.......... Future message ...........</p>
+	</div>
+
+	<form action="#">
+		<input type="text" name="pseudo" placeholder="Pseudo ....." size="15">
+		<input type="text" name="message" placeholder="Message ....." size="100">
+		<input type="submit" value="OK">
+	</form>
+
+	<script src="http://code.jquery.com/jquery.min.js"></script> 
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/scripts/client.js"></script>
+</fieldset>
+
+
+	
+</body>
+</html>	

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Mon super tchat en Node.js</title>
+
+	<style>
+		fieldset { overflow: hidden; }
+		#userslist {
+			float: right;
+			border: thin solid gray;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Mon super tchat en Node.js</h1>
+
+<fieldset>
+	<legend>Tchat</legend>
+
+	<aside id="userslist">
+		<h2>Sont connectés :</h2>
+		<ul></ul>
+	</aside>
+
+	<div id="tchatbox">
+		<!-- Les futurs messages ici ... -->
+	</div>
+
+	<form action="#" id="tchatform">
+		<input type="text" name="pseudo" placeholder="Pseudo..." size="20">
+		<input type="text" name="message" placeholder="Message..." size="100">
+		<input type="submit" value="Ok">
+	</form>
+	
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/scripts/client.js"></script>
+</fieldset>
+
+</body>
+</html>
