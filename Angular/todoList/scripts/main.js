@@ -1,6 +1,6 @@
 var app = angular.module('TodoMVC', []);
 
-var todolist = [
+var data = [
 	{taskName: 'Eve online', done:true},
 	{taskName: 'League of legend', done:true},
 	{taskName: 'Medecin', done:false},
@@ -10,11 +10,13 @@ var todolist = [
 
 app.controller('TodoController', function() {
 
-	this.todos = todolist;
+	var todo = this;
+	todo.todolist = data;
+	todo.newTaskName = '';
 
-	this.remaining = function(){
-		var undone = todolist.length;
-		todolist.forEach(function(el){
+	todo.remaining = function(){
+		var undone = data.length;
+		data.forEach(function(el){
 			if (el.done){
 				undone--;
 			}
@@ -24,13 +26,24 @@ app.controller('TodoController', function() {
 	};
 
 
-	this.add = function() {
-	    todolist.unshift({
-	      taskName : this.newTaskName,
-	      done : false
-	    });
-	    this.newTaskName = '';
+	todo.add = function() {
+		if (todo.newTaskName !== '') {
+		    data.unshift({
+		      taskName : todo.newTaskName,
+		      done : false
+		    });
+			
+		}
  	};
+
+ 	todo.archiver  = function(){
+ 		todo.todolist  = todo.todolist
+			 			.filter(conserverUnDone);
+ 	};
+
+ 	function conserverUnDone(item){
+ 		return item.done === false
+ 	}
 
 
 });
