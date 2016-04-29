@@ -1,0 +1,21 @@
+{
+  "name": "todoList",
+  "homepage": "https://github.com/exopole/EEM",
+  "authors": [
+    "exopole <alexandre.nicaise28@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5"
+  }
+}

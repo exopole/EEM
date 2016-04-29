@@ -1,0 +1,19 @@
+{
+  "name": "todomvc-cpdev12",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.0",
+    "angular": "^1.5.4",
+    "ngstorage": "^0.3.10"
+  }
+}

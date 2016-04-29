@@ -1,0 +1,13 @@
+body {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+
+.todo-done { 
+	text-decoration: line-through; 
+	color: green
+}

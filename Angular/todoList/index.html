@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html lang="en" ng-app="TodoMVC">
+<head>
+	<meta charset="UTF-8">
+	<title>Ma TODOLIST</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="bower_components/angular/angular.js"></script>
+	<script text="text/javascript" src="scripts/main.js"></script>
+</head>
+<body>
+	<h1>Ma todolist</h1>
+	<div class="todo-container" ng-controller="TodoController as my">
+		<h2> {{my.remaining()}} restant sur un total de {{my.todos.length}} </h2>
+		<form ng-submit="my.add()" novalidate>
+		  <input type="text" ng-model="my.newTaskName" placeholder="Nouvelle tâche ...">
+		  <input type="submit" value="OK">
+		</form>
+		
+		<ul>
+			<li ng-repeat="todo in my.todos">
+				<input type="checkbox"  ng-model="todo.done" > 
+				<span ng-class="{'todo-done':todo.done}"> {{todo.taskName}} </span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

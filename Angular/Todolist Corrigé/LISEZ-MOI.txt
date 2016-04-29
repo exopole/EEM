@@ -1,0 +1,5 @@
+Pour installer les dépendances bower, lancez la commande :
+
+  bower install
+
+(Cela va analyser le bower.json et installer les "dependancies")
